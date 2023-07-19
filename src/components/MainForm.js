@@ -19,12 +19,14 @@ const submitHandler =(e)=>{
       <input
         id="username"
         type="text"
+        required
         onChange={(e) => handleInputChange("username", e.target.value)}
       />
       <label htmlFor="username">User Name</label>
       <input
         id="age"
         type="number"
+        required
         onChange={(e) => {
           handleInputChange("age", e.target.value);
         }}
