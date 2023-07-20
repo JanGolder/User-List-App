@@ -16,7 +16,7 @@ function App() {
     } else {
       setIsValid(true);
       setUsersData((prevState) => {
-        return [...prevState, userData];
+        return [...prevState, {id: Math.random(), username: userData.username, age: userData.age}];
       });
     }
   };
@@ -25,12 +25,18 @@ function App() {
     setIsValid(true);
   }
 
-console.log(isValid)
+  const removeSingleUser = (userId)=>{
+    const newUserList = usersData.filter(user=>user.id !== userId);
+    setUsersData(newUserList)
+
+  }
+
+  console.log(usersData)
 
   return (
     <>
       <MainForm onUsersDataHandler={usersDataHandler} />
-      <UsersList usersData={usersData} />
+      <UsersList usersData={usersData} onRemoveUser={removeSingleUser}/>
       {isValid || <ValidationInfo onCloseHandler={closeValidHandler}/>}
     </>
   );

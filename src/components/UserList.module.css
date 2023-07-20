@@ -1,0 +1,21 @@
+.userslist{
+    margin: 50px auto;
+    list-style: none;
+    padding: 0;
+}
+
+.userslist li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 50px;
+    margin: 0 auto;
+    color: #fff;
+    background-color: #36B0C5;
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 10px;
+}

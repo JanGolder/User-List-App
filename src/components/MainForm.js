@@ -1,7 +1,13 @@
 import { useState } from "react";
+import classes from './MainForm.module.css';
 
-const MainForm = ({onUsersDataHandler}) => {
-  const [userData, setUserData] = useState({});
+const initialUserData = {
+  username: "",
+  age: "",
+};
+
+const MainForm = ({ onUsersDataHandler }) => {
+  const [userData, setUserData] = useState(initialUserData);
 
   const handleInputChange = (input, value) => {
     setUserData((prevState) => {
@@ -9,14 +15,16 @@ const MainForm = ({onUsersDataHandler}) => {
     });
   };
 
-const submitHandler =(e)=>{
+  const submitHandler = (e) => {
     e.preventDefault();
-    onUsersDataHandler(userData)
-}
+    onUsersDataHandler(userData);
+    setUserData(initialUserData);
+  };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form className={classes.form} onSubmit={submitHandler}>
       <input
+        value={userData["username"]}
         id="username"
         type="text"
         required
@@ -24,6 +32,7 @@ const submitHandler =(e)=>{
       />
       <label htmlFor="username">User Name</label>
       <input
+        value={userData["age"]}
         id="age"
         type="number"
         required

@@ -1,7 +1,11 @@
-const SingleUser = ({userData})=>{
+const SingleUser = ({userData,removeSingleUser})=>{
+
+    const removeHandler=()=>{
+        removeSingleUser(userData.id)
+    }
 
     return (
-        <li>
+        <li onClick={removeHandler}>
             <p>{`${userData.username} (${userData.age} years old)`}</p>
         </li>
     )
