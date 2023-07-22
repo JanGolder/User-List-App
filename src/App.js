@@ -31,8 +31,6 @@ function App() {
 
   }
 
-  console.log(usersData)
-
   return (
     <>
       <MainForm onUsersDataHandler={usersDataHandler} />
