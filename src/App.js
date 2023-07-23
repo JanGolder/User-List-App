@@ -9,6 +9,8 @@ function App() {
 
   const usersDataHandler = (userData) => {
     
+    console.log(userData)
+
     if (userData.username.length < 3 || userData.age < 10) {
       console.log("Username is too short or you are too young to subscribe");
       setIsValid(false);
